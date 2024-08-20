@@ -1,0 +1,6 @@
+numpy>=1.12
+pytest>=3.6
+galsim>2.5
+pystellibs
+dust_extinction
+astropy.units

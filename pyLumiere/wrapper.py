@@ -86,7 +86,7 @@ class Stellib():
                                        interpolant='linear')
         return galsim.SED(ext_table, wave_type='nm', flux_type='1')
 
-    def get_sed(self, logte, logg, logl, z, mu0, av, rv, dustmodel):
+    def get_sed(self, logte, logg, logl, z, mu0, av, rv=None, dustmodel=None):
         """Return extincted observed SED."""
         sed_i = self.get_intrinsic_sed(logte, logg, logl, z)
         sed_o = self.convert_to_observed(sed_i, mu0)

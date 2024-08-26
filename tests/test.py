@@ -33,6 +33,7 @@ def test_dusterr():
     """Test errors raised for dust extinction mistakes."""
     pylumiere.utils.get_dust_model('O94', 3.1)
     pylumiere.utils.get_dust_model('F19', 3.1)
+    pylumiere.utils.get_dust_model('G23', 3.1)
 
     with np.testing.assert_raises(NameError):
         pylumiere.utils.get_dust_model('O19', 3.1)

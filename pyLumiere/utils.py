@@ -9,8 +9,10 @@ def get_dust_model(dustname, rv):
         model = dust_extinction.parameter_averages.O94(Rv=rv)
     elif dustname == 'F19':
         model = dust_extinction.parameter_averages.F19(Rv=rv)
+    elif dustname == 'G23':
+        model = dust_extinction.parameter_averages.G23(Rv=rv)
     else:
-        raise NameError(f"Invalid input: {dustname} not one of O94, F19!")
+        raise NameError(f"Invalid input: {dustname} not one of O94, F19, G23!")
 
     # convert to nm from 1/micron
     wlmin = 1e3/model.x_range[1]

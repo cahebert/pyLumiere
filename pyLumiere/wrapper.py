@@ -38,9 +38,10 @@ class Stellib():
             self.dustmodel = None
         
     def get_intrinsic_sed(self, logte, logg, logl, z):
-        """Get 'intrinsic' sed from pystellibs, with units erg/s/A."""
+        """Get 'intrinsic' sed from pystellibs, with units erg/s/nm."""
         try:
-            return self.pystellib.generate_stellar_spectrum(logte, logg, logl, z)
+            # *10 to convert to 1/nm from 1/A
+            return self.pystellib.generate_stellar_spectrum(logte, logg, logl, z) * 10 
         except RuntimeError:
             raise ValueError("Input parameters are outside interpolation range!")
     

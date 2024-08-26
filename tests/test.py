@@ -70,7 +70,7 @@ def test_reproducibility():
               'dustmodel': 'O94'}
     
     result = etoiles.get_sed(**params)
-    np.testing.assert_equal(1026.6027837219237, result(1000))
+    np.testing.assert_almost_equal(10266.027837219237, result(1000), decimals=8)
 
 if __name__ == '__main__':
     test_init()
